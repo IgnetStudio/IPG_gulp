@@ -10,7 +10,8 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-plumber": "^1.1.0",
     "gulp-replace": "^0.6.1",
-    "gulp-strip-css-comments": "^1.2.0"
+    "gulp-strip-css-comments": "^1.2.0",
+    "gulp-uglify": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
