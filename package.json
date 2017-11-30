@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.1.0",
     "gulp-replace": "^0.6.1",
     "gulp-strip-css-comments": "^1.2.0",
