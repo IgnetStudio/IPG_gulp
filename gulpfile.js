@@ -7,5 +7,5 @@
 //
 
 //
-// GULP TASKS STYLES
+// GULP TASKS
 //
