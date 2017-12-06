@@ -37,10 +37,26 @@ const config = {
     pathReplace: 'string to replace',
     concatCss: 'main.css',
     concatJs: 'main.js',
-    font_01_text: 'font to replace',
-    fontReplaceBold: '"Lato"' // no comma here
+    srcFont: 'font to replace',
+    distFont: '"Lato"' // no comma here
 };
 
 //
-// GULP TASKS
+// GULP TASK STYLES: minify, concatenation, remove comments, replace paths & fonts
+//
+
+gulp.task("styles", function() {
+    return gulp.src(config.srcCss)
+      .pipe(plumber())
+      .pipe(cleanCss({ keepSpecialComments: false }))
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(concat(config.concatCss))
+      .pipe(stripCssComments({ preserve: false }))
+      .pipe(replace(config.pathCss, [config.pathReplace + config.rootPath + "/" + config.subPath + "/"]))
+      .pipe(replace(config.srcFont, config.distFont))
+      .pipe(gulp.dest(config.distCss))
+  });
+
+//
+// GULP FURTHER TASKS
 //
