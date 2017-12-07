@@ -58,5 +58,24 @@ gulp.task("styles", function() {
   });
 
 //
-// GULP FURTHER TASKS
+// GULP TASK SCRIPTS: replace paths, concatenation, minify
+//
+
+gulp.task("scripts", function(){
+    return gulp.src(config.srcJs)
+      .pipe(plumber())
+      .pipe(replace(config.pathJs, [config.pathReplace + config.rootPath + "/" + config.subPath + "/"]))    
+      .pipe(concat(config.concatJs))
+      .pipe(gulp.dest(config.distJs))
+      .pipe(rename({suffix: ".min"}))
+      .pipe(uglify())
+      .pipe(gulp.dest(config.distJs));
+  });
+
+//
+// GULP TASK HTML: delete redundant lines, replace paths, fill empty alts
+//
+
+//
+// GULP TASK DEFAULT: watch live changes while editing code
 //
