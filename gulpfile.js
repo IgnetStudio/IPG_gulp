@@ -76,6 +76,20 @@ gulp.task("scripts", function(){
 // GULP TASK HTML: delete redundant lines, replace paths, fill empty alts
 //
 
+gulp.task("html", function(){
+    return gulp.src(config.srcHtml)
+      .pipe(plumber())
+      .pipe(deleteLines({
+          'filters': [
+              /text to remove[^\n]*/igm 
+          ]
+      }))
+      .pipe(replace(config.pathHtml, [config.pathReplace + config.rootPath + "/" + config.subPath + "/"]))
+      .pipe(posthtml([require('posthtml-alt-always')()]))
+      .pipe(replace(config.emptyAlt, config.altFill))
+      .pipe(gulp.dest(config.distHtml));
+  });
+
 //
 // GULP TASK DEFAULT: watch live changes while editing code
 //
