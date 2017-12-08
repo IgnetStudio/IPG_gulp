@@ -93,3 +93,13 @@ gulp.task("html", function(){
 //
 // GULP TASK DEFAULT: watch live changes while editing code
 //
+
+//
+// GULP TASK DEFAULT: watch live changes while editing code
+//
+
+gulp.task("default", function() {
+    gulp.watch(config.srcCss, ["styles"]);
+    gulp.watch(config.srcJs, ["scripts"]);
+    gulp.watch(config.srcHtml, ["html"]);
+});
