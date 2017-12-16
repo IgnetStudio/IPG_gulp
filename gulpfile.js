@@ -96,7 +96,7 @@ gulp.task("html", function(){
 //
 
 gulp.task('img', function () {
-    return gulp.src('src/**/*.{jpg,png}')
+    return gulp.src('src/img/slider/*.{jpg,png}')
         .pipe(smushit())
         .pipe(gulp.dest('dist'));
 });
