@@ -14,6 +14,7 @@
     "gulp-posthtml": "^3.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
+    "gulp-smushit": "^1.2.0",
     "gulp-strip-css-comments": "^1.2.0",
     "gulp-uglify": "^3.0.0"
   },
