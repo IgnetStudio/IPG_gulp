@@ -12,6 +12,7 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const posthtml = require('gulp-posthtml');
 const deleteLines = require('gulp-delete-lines');
+const smushit = require('gulp-smushit');
 
 //
 // GULP SETUP
@@ -91,8 +92,14 @@ gulp.task("html", function(){
   });
 
 //
-// GULP TASK DEFAULT: watch live changes while editing code
+// GULP TASK IMG: resize & compress images
 //
+
+gulp.task('img', function () {
+    return gulp.src('src/**/*.{jpg,png}')
+        .pipe(smushit())
+        .pipe(gulp.dest('dist'));
+});
 
 //
 // GULP TASK DEFAULT: watch live changes while editing code
