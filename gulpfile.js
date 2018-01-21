@@ -92,7 +92,7 @@ gulp.task("html", function(){
   });
 
 //
-// GULP TASK IMG: resize & compress images
+// GULP TASK IMG: compress images
 //
 
 gulp.task('img', function () {
